@@ -13,6 +13,7 @@ class LibraryTest {
     private Book book1;
     private Book book2;
     private Book book3;
+    private Book book4;
 
 
     @BeforeEach
@@ -21,6 +22,7 @@ class LibraryTest {
         book1 = new Book("El Quijote");
         book2 = new Book("La divina Comedia");
         book3 = new Book("El capital");
+        book4 = new Book("El Quijote");
     }
 
    @Test
@@ -37,11 +39,28 @@ class LibraryTest {
     }
 
     @Test
+    void testModifyTheListAddingABook(){
+        bookList.addBook(book1);
+        assertEquals(1, bookList.getBooksList().size());
+        bookList.addBook(book3);
+        assertEquals(2, bookList.getBooksList().size());
+    }
+
+    @Test
     void testGetBookByIndex(){
         bookList.addBook(book1);
         bookList.addBook(book2);
         String getBook = bookList.getBookByIndex(0);
         assertEquals(getBook, book1.getTitle());
     }
+
+    @Test
+    void testNotDuplicatedBooks(){
+        bookList.addBook(book1);
+        bookList.addBook(book4);
+        assertEquals(1,bookList.getBooksList().size());
+    }
+
+
 
 }
