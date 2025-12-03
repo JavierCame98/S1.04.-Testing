@@ -1,6 +1,6 @@
 package S0411;
 
-public class Book {
+public class Book implements Comparable<Book> {
 
     private String title;
 
@@ -25,4 +25,8 @@ public class Book {
         return title.hashCode();
     }
 
+    @Override
+    public int compareTo(Book book) {
+        return this.getTitle().compareTo(book.getTitle());
+    }
 }
