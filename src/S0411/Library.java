@@ -15,6 +15,9 @@ public class Library {
         if(book == null){
             return;
         }
+        if(booksList.contains(book)){
+            return;
+        }
         booksList.add(book);
     }
 
