@@ -12,6 +12,9 @@ public class Library {
     }
 
     public void addBook(Book book){
+        if(book == null){
+            return;
+        }
         booksList.add(book);
     }
 
@@ -27,18 +30,19 @@ public class Library {
         return book.getTitle();
     }
 
-    public void addBookByIndex(Book b, int index){
+    public boolean addBookByIndex(Book b, int index){
         if(index < 0 || index >= booksList.size()){
-                throw new IllegalArgumentException("");
+                return false;
         }
         booksList.add(index, b);
+        return true;
     }
 
     public boolean removeBookByTitle(String title) {
         if(title == null || title.isEmpty()){
-            throw new IllegalArgumentException("");
+            return false;
         }
-        for (int i = 0; i <= booksList.size(); i++) {
+        for (int i = 0; i < booksList.size(); i++) {
             Book book = booksList.get(i);
             if (book.getTitle().equals(title)) {
                 booksList.remove(i);
