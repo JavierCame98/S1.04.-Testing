@@ -1,6 +1,7 @@
 package S0411;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Library {
@@ -19,6 +20,7 @@ public class Library {
             return;
         }
         booksList.add(book);
+        Collections.sort(booksList);
     }
 
     public List<Book> getBooksList (){
