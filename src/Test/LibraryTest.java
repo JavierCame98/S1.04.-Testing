@@ -39,6 +39,16 @@ class LibraryTest {
     }
 
     @Test
+    void testAddingABookByIndex(){
+        bookList.addBook(book1);
+        bookList.addBook(book2);
+        bookList.addBookByIndex(book3, 1);
+        Book bookIndex1 = bookList.getBooksList().get(1);
+        String bookTitleIndex1 = bookIndex1.getTitle();
+        assertEquals(book3.getTitle(), bookTitleIndex1);
+    }
+
+    @Test
     void testModifyTheListAddingABook(){
         bookList.addBook(book1);
         assertEquals(1, bookList.getBooksList().size());
@@ -70,6 +80,7 @@ class LibraryTest {
         bookList.removeBookByTitle(book1.getTitle());
         assertEquals(2,bookList.getBooksList().size());
     }
+
 
 
 
