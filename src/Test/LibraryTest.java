@@ -61,6 +61,16 @@ class LibraryTest {
         assertEquals(1,bookList.getBooksList().size());
     }
 
+    @Test
+    void testRemovingABookReduceTheListSize(){
+        bookList.addBook(book1);
+        bookList.addBook(book2);
+        assertEquals(2, bookList.getBooksList().size());
+        bookList.addBook(book3);
+        bookList.removeBookByTitle(book1.getTitle());
+        assertEquals(2,bookList.getBooksList().size());
+    }
+
 
 
 }
