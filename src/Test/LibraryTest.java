@@ -14,6 +14,7 @@ class LibraryTest {
     private Book book2;
     private Book book3;
     private Book book4;
+    private Book book5;
 
 
     @BeforeEach
@@ -23,6 +24,7 @@ class LibraryTest {
         book2 = new Book("La divina Comedia");
         book3 = new Book("El capital");
         book4 = new Book("El Quijote");
+        book5 = new Book("Decameron");
     }
 
    @Test
@@ -79,6 +81,15 @@ class LibraryTest {
         bookList.addBook(book3);
         bookList.removeBookByTitle(book1.getTitle());
         assertEquals(2,bookList.getBooksList().size());
+    }
+
+    @Test
+    void testTheBookListRemainsOrdered(){
+        bookList.addBook(book1);
+        bookList.addBook(book2);
+        bookList.addBook(book5);
+        String firstBook = bookList.getBookByIndex(0);
+        assertEquals(book5.getTitle(),firstBook);
     }
 
 
