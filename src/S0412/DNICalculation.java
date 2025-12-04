@@ -2,7 +2,7 @@ package S0412;
 
 public class DNICalculation {
 
-    private static final String LETTERS = "RWAGMYFPDXBNJZSQVHLCKE";
+    private static final String LETTERS = "TRWAGMYFPDXBNJZSQVHLCKE";
 
     public static char letterCalculation(int DNINumber){
 
