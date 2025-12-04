@@ -13,14 +13,14 @@ public class DNICalculationTest {
 
     private static Stream<Arguments> DNIProvider(){
         return Stream.of(
-                Arguments.of(10000000, 'X'),
-                Arguments.of(20000000, 'S'),
-                Arguments.of(30000000, 'B'),
-                Arguments.of(40000000, 'J'),
-                Arguments.of(50000000, 'P'),
-                Arguments.of(12345678, 'E'),
-                Arguments.of(87654321, 'R'),
-                Arguments.of(70000000, 'J'),
+                Arguments.of(10000000, 'Z'),
+                Arguments.of(21786008, 'V'),
+                Arguments.of(30000000, 'L'),
+                Arguments.of(40000000, 'X'),
+                Arguments.of(50000000, 'R'),
+                Arguments.of(12345678, 'Z'),
+                Arguments.of(87654321, 'X'),
+                Arguments.of(70000000, 'Y'),
                 Arguments.of(0, 'T'),
                 Arguments.of(99999999, 'R')
         );
@@ -32,6 +32,7 @@ public class DNICalculationTest {
         char DNILetter = DNICalculation.letterCalculation(DNINumber);
         assertEquals(expectedLetter,DNILetter);
     }
+
 
 
 }
