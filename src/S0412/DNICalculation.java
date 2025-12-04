@@ -6,10 +6,10 @@ public class DNICalculation {
 
     public static char letterCalculation(int DNINumber){
 
-        if(DNINumber <= 0 || DNINumber > 99999999){
+        if(DNINumber < 0 || DNINumber > 99999999){
             throw new IllegalArgumentException("The DNI number is out of range");
         }
-        int indexDNI = DNINumber %23;
+        int indexDNI = DNINumber % 23;
         return LETTERS.charAt(indexDNI);
     }
 
